@@ -32,11 +32,11 @@ import {
     },
     {
       id: "work",
-      title: "Work",
+      title: "Contact",
     },
     {
       id: "contact",
-      title: "Contact",
+      title: "Try now",
     },
   ];
   

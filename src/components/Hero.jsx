@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { RoundedButtons } from "./btn";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
@@ -15,19 +16,19 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Adrian</span>
+            Hi, I'm <span className='text-[#915EFF]'>FRIDAY</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visuals, user <br className='sm:block hidden' />
-            interfaces and web applications
+             Ai chatbot with 3D Avatar using <br className='sm:block hidden' />
+             Unity and AI ML
           </p>
         </div>
       </div>
 
       <ComputersCanvas />
 
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
-        <a href='#about'>
+      <div className='absolute transform -translate-y-12 xs:bottom-10 bottom-32 w-full flex '>
+        {/* <a href='#about'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div
               animate={{
@@ -41,7 +42,13 @@ const Hero = () => {
               className='w-3 h-3 rounded-full bg-secondary mb-1'
             />
           </div>
-        </a>
+        </a> */}
+        <button type="button"
+      className="ml-20  sm:w-6/12 md:w-1/6 lg:w-36   rounded-sm px-3 py-3.5 text-sm font-semibold hover:bg-[#6f47c5] text-white shadow-sm relative bg-[#6521f8] overflow-hidden"
+    >
+      <span className="relative z-10">Try Now</span>
+      <span className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300"></span>
+    </button>
       </div>
 
     </section>
