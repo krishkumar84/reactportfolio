@@ -76,7 +76,7 @@ const Dictaphone = () => {
       <div className="flex microphonets">
         <p className="micro ">Microphone: {isListening ? "on" : "off"}</p>
         <p className="micro ">Real time  Transcript: {transcript}</p>
-        <p className="micro ">Final Transcript: {finalTranscript}</p>
+{/*         <p className="micro ">Final Transcript: {finalTranscript}</p> */}
       </div>
     </div>
   );
