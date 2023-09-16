@@ -35,7 +35,7 @@ import {
       title: "Contact",
     },
     {
-      id: "contact",
+      id: "secondpage",
       title: "Try now",
     },
   ];

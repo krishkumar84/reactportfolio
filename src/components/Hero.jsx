@@ -1,10 +1,24 @@
 import { motion } from "framer-motion";
 import { RoundedButtons } from "./btn";
+import { Link } from 'react-router-dom';
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
+import { useRef } from 'react';
+
 const Hero = () => {
-  return (
+  const handleButtonClick = () => {
+    // Delay the scroll action by 2 seconds
+    setTimeout(() => {
+      // Scroll to the target section
+      const secondPageSection = document.getElementById('secondpage');
+      if (secondPageSection) {
+        secondPageSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 500); 
+  };
+  
+ return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
@@ -28,7 +42,7 @@ const Hero = () => {
       <ComputersCanvas />
 
       <div className='absolute transform -translate-y-12 xs:bottom-10 bottom-32 w-full flex '>
-        {/* <a href='#about'>
+        {/* <a href='#secondpage'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div
               animate={{
@@ -42,15 +56,20 @@ const Hero = () => {
               className='w-3 h-3 rounded-full bg-secondary mb-1'
             />
           </div>
-        </a> */}
-        <button type="button"
-      className="ml-20  sm:w-6/12 md:w-1/6 lg:w-36   rounded-sm px-3 py-3.5 text-sm font-semibold hover:bg-[#6f47c5] text-white shadow-sm relative bg-[#6521f8] overflow-hidden"
-    >
-      <span className="relative z-10">Try Now</span>
-      <span className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300"></span>
-    </button>
-      </div>
+        </a>  */}
+        
+        <Link to="/second" className="relative z-10">
+  <button
+    type="button"
+    className="ml-20 sm:w-6/12 md:w-1/6 lg:w-36 rounded-sm px-3 py-3.5 text-sm font-semibold hover:bg-[#6f47c5] text-white shadow-sm relative bg-[#6521f8] overflow-hidden"
+    onClick={handleButtonClick}
+  >
+    Try Now
+  </button>
+</Link>
 
+
+      </div>
     </section>
   );
 };
