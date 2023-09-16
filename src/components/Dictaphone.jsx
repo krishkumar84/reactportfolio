@@ -10,24 +10,24 @@ const Dictaphone = () => {
     useSpeechRecognition();
 
   const [isListening, setIsListening] = useState(false);
-  // const socket = io("http://localhost:8080"); // Replace with your server's URL.
+  const socket = io("http://localhost:8080"); // Replace with your server's URL.
 
   useEffect(() => {
     return () => {
       // Clean up the socket connection when the component unmounts.
-      // socket.disconnect();
+      socket.disconnect();
     };
   }, []);
 
-  // useEffect(() => {
-  //   if (finalTranscript) {
-  //     // Send finalTranscript to the WebSocket server using Socket.io.
-  //     // socket.emit("transcript", finalTranscript);
+  useEffect(() => {
+    if (finalTranscript) {
+      // Send finalTranscript to the WebSocket server using Socket.io.
+      socket.emit("transcript", finalTranscript);
 
-  //     // Clear the final transcript after sending it.
-  //     resetTranscript();
-  //   }
-  // }, [finalTranscript, resetTranscript, socket]);
+      // Clear the final transcript after sending it.
+      // resetTranscript();
+    }
+  }, [finalTranscript, resetTranscript, socket]);
 
   const handleStartListening = () => {
     setIsListening(true);
